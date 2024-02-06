@@ -10,6 +10,17 @@ $page=$_GET['uc'];
 if ($page==="accueil"){
     include __DIR__.'/Controller/AccueilController.php';
 } 
+
+elseif ($page==="produit"){
+    include __DIR__.'/Controller/ProduitController.php';
+} 
+elseif ($page==="categorie"){
+    include __DIR__.'/Controller/CategorieController.php';
+} 
+elseif ($page==="contact"){
+    include __DIR__.'/Controller/ContactController.php';
+} 
+
 ?>
 </body>
 </html>
