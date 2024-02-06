@@ -9,6 +9,10 @@ différents cas du CRUD
 */
 $action = $_GET['action'];
 if ($action == "read_all" ) {
+    // recuperation des données
+    include __DIR__.'/../modele/ModeleProduit.php';
+    
+    // afficher la vue dans laquelle on affichera les données
     include __DIR__.'/../Vue/ProduitVue.php';
 }
 
