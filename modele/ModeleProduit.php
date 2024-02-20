@@ -20,11 +20,23 @@ function saveProduit($nom){
     $pdo = new \PDO('mysql:host=localhost;dbname=ecommerce', 'root', '');
 
     $prix=100;
-    
+
     $statement=$pdo->prepare("INSERT INTO produit (nom, prix) 
     VALUES (:nom_protege, :prix_protege)");
     $statement->bindParam(':nom_protege', $nom, PDO::PARAM_STR);
     $statement->bindParam(':prix_protege', $prix, PDO::PARAM_INT);
     $statement->execute();
 
+}
+
+function supprimerProduit($id) {
+    // Connecte a la B.D.
+    $pdo = new \PDO('mysql:host=localhost;dbname=ecommerce', 'root', '');
+
+    // requete d'insertion
+
+    $statement=$pdo->prepare("DELETE FROM produit WHERE id >= :produit_id");
+    $statement->bindParam(':produit_id', $id, PDO::PARAM_INT); 
+
+    $statement->execute();
 }

@@ -37,4 +37,15 @@ if ($action == "enregistrerproduit" ) {
     // on peut redirige vers la page produits
     header("location:index.php?uc=produit&action=read_all");
  
- }
+}
+if ($action=="supprimer") {
+    $id=$_GET['id'];
+    include __DIR__.'/../modele/ModeleProduit.php';
+    supprimerProduit($id);
+    header("location:index.php?uc=produit&action=read_all");
+
+
+
+
+
+}
