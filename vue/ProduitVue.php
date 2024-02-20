@@ -9,4 +9,7 @@ foreach ($produits as $unProduit){ ?>
 
 <?php 
 }
- 
+ ?>
+ <a href="index.php?uc=produit&action=ajouter">
+Ajouter un produit
+</a>

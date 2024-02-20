@@ -2,8 +2,17 @@
 // session_start();
 // routeur
 include __DIR__."/vue/header.php";
-// var_dump($_SERVER);
-$page=$_GET['uc'];
+if (!isset($_GET['uc'])) {
+    $page="accueil";
+}
+else {
+    // var_dump($_SERVER);
+    $page=$_GET['uc'];
+}
+
+// si dans l'url on a pas encore d'uc alors
+// on considere l'uc = accueil
+
 
 // afficher le header
 // include __DIR__.'/Vue/header.php';
